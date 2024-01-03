@@ -11,6 +11,9 @@ export default function App() {
         "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
       );
       console.log("API Response Status:", res.status);
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
       const dat = await res.json();
       setData(dat);
     } catch (error) {
