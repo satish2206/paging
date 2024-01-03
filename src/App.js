@@ -10,6 +10,7 @@ export default function App() {
       const res = await fetch(
         "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
       );
+      console.log("API Response Status:", res.status);
       const dat = await res.json();
       setData(dat);
     } catch (error) {
